@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Успешная заявка",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Анна Иванова", "phone": "+79001234567", "audience": "parents", "message": "Хочу записаться"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Ошибка — нет телефона",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест", "audience": "teachers"},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Заполните имя, телефон и выберите программу"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

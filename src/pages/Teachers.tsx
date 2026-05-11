@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import Icon from "@/components/ui/icon"
+import LeadForm from "@/components/LeadForm"
 
 const COLOR = "hsl(262 83% 68%)"
 const COLOR_BG = "hsl(262 83% 68% / 0.12)"
@@ -450,25 +451,20 @@ export default function Teachers() {
         {/* CTA */}
         <section
           id="contact-block"
-          className="rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+          className="rounded-3xl p-8 md:p-12 relative overflow-hidden"
           style={{ background: "linear-gradient(135deg, hsl(262 83% 68% / 0.15), hsl(195 85% 60% / 0.08))", border: "1px solid hsl(262 83% 68% / 0.3)" }}
         >
           <div className="absolute top-4 left-4 text-primary/20 text-5xl font-extralight">+</div>
           <div className="absolute bottom-4 right-4 text-primary/20 text-5xl font-extralight">+</div>
-          <h2 className="text-3xl md:text-4xl font-black mb-4 relative z-10" style={{ fontFamily: "var(--font-nunito)" }}>
-            Готовы начать?
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto relative z-10">
-            Запишитесь на бесплатную консультацию — расскажем, как внедрить программу в вашей школе
-          </p>
-          <a href="mailto:hello@example.com">
-            <button
-              className="px-10 py-4 rounded-full font-black text-white text-lg transition-all hover:scale-105"
-              style={{ background: COLOR, boxShadow: "0 0 40px hsl(262 83% 68% / 0.35)" }}
-            >
-              Записаться бесплатно
-            </button>
-          </a>
+          <div className="relative z-10 max-w-xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black mb-2 text-center" style={{ fontFamily: "var(--font-nunito)" }}>
+              Готовы начать?
+            </h2>
+            <p className="text-muted-foreground mb-8 text-center">
+              Бесплатная консультация — расскажем, как внедрить программу в вашей школе
+            </p>
+            <LeadForm defaultAudience="teachers" accentColor={COLOR} />
+          </div>
         </section>
       </div>
     </div>

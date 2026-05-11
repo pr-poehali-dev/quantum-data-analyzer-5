@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import Icon from "@/components/ui/icon"
+import LeadForm from "@/components/LeadForm"
 
 const COLOR = "hsl(195 85% 60%)"
 const COLOR_BG = "hsl(195 85% 60% / 0.12)"
@@ -450,25 +451,20 @@ export default function Parents() {
         {/* CTA */}
         <section
           id="contact-block"
-          className="rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+          className="rounded-3xl p-8 md:p-12 relative overflow-hidden"
           style={{ background: "linear-gradient(135deg, hsl(195 85% 60% / 0.15), hsl(262 83% 68% / 0.08))", border: "1px solid hsl(195 85% 60% / 0.3)" }}
         >
           <div className="absolute top-4 left-4 opacity-20 text-5xl font-extralight" style={{ color: COLOR }}>+</div>
           <div className="absolute bottom-4 right-4 opacity-20 text-5xl font-extralight" style={{ color: COLOR }}>+</div>
-          <h2 className="text-3xl md:text-4xl font-black mb-4 relative z-10" style={{ fontFamily: "var(--font-nunito)" }}>
-            Готовы восстановить контакт?
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto relative z-10">
-            Бесплатная консультация — разберём вашу ситуацию и подберём подходящие практики
-          </p>
-          <a href="mailto:hello@example.com">
-            <button
-              className="px-10 py-4 rounded-full font-black text-white text-lg transition-all hover:scale-105"
-              style={{ background: COLOR, boxShadow: "0 0 40px hsl(195 85% 60% / 0.35)" }}
-            >
-              Записаться бесплатно
-            </button>
-          </a>
+          <div className="relative z-10 max-w-xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black mb-2 text-center" style={{ fontFamily: "var(--font-nunito)" }}>
+              Готовы восстановить контакт?
+            </h2>
+            <p className="text-muted-foreground mb-8 text-center">
+              Бесплатная консультация — разберём вашу ситуацию и подберём подходящие практики
+            </p>
+            <LeadForm defaultAudience="parents" accentColor={COLOR} />
+          </div>
         </section>
       </div>
     </div>

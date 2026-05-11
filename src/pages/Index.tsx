@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import LeadForm from "@/components/LeadForm"
 import SplineScene from "@/components/SplineScene"
 import Header from "@/components/Header"
 import RotatingTextAccent from "@/components/RotatingTextAccent"
@@ -429,34 +430,17 @@ const Index = () => {
           <div className="absolute bottom-4 left-4 text-accent/20 text-6xl font-extralight">+</div>
           <div className="absolute bottom-4 right-4 text-accent/20 text-6xl font-extralight">+</div>
 
-          <div className="relative z-10 px-6">
+          <div className="relative z-10 px-4 max-w-xl mx-auto w-full">
             <h2
-              className="text-3xl md:text-5xl font-black mb-4"
+              className="text-3xl md:text-5xl font-black mb-4 text-center"
               style={{ fontFamily: "var(--font-nunito)" }}
             >
               Начни путь к эмоциональной зрелости
             </h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-8 text-lg">
+            <p className="text-muted-foreground text-center mb-8 text-lg">
               Бесплатная первичная консультация для подростков и их семей
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:hello@example.com">
-                <button
-                  className="px-10 py-4 rounded-full font-black text-lg text-white transition-all duration-300 hover:scale-105"
-                  style={{
-                    background: "linear-gradient(135deg, hsl(262, 83%, 68%), hsl(195, 85%, 60%))",
-                    boxShadow: "0 0 40px hsl(262 83% 68% / 0.4)",
-                  }}
-                >
-                  Записаться бесплатно
-                </button>
-              </a>
-              <a href="tel:+79000000000">
-                <button className="px-10 py-4 rounded-full font-bold text-lg border border-border hover:border-primary/50 transition-all duration-300 hover:bg-primary/5">
-                  Позвонить нам
-                </button>
-              </a>
-            </div>
+            <LeadForm />
           </div>
         </section>
       </div>
