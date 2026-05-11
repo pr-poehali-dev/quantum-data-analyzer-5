@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,37 +6,42 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
+    --background: 230 25% 8%;
+    --foreground: 220 20% 96%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 98%;
+    --card: 230 22% 12%;
+    --card-foreground: 220 20% 96%;
 
-    --popover: 0 0% 3%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 230 22% 10%;
+    --popover-foreground: 220 20% 96%;
 
-    --primary: 258 80% 65%;
+    --primary: 262 83% 68%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 230 20% 18%;
+    --secondary-foreground: 220 20% 96%;
 
-    --muted: 0 0% 9%;
-    --muted-foreground: 0 0% 62%;
+    --muted: 230 20% 15%;
+    --muted-foreground: 220 15% 55%;
 
-    --accent: 258 80% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 195 85% 60%;
+    --accent-foreground: 230 25% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 12%;
-    --ring: 258 80% 65%;
+    --border: 230 20% 20%;
+    --input: 230 20% 16%;
+    --ring: 262 83% 68%;
 
-    --radius: 0.625rem;
+    --radius: 1rem;
+
+    --color-teachers: 262 83% 68%;
+    --color-parents: 195 85% 60%;
+    --color-students: 340 80% 65%;
 
     --font-mono: "IBM Plex Mono", monospace;
+    --font-nunito: "Nunito", sans-serif;
     --font-montserrat: "Montserrat", sans-serif;
 
     --sidebar-background: 0 0% 98%;
@@ -57,7 +62,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-mono);
+    font-family: var(--font-nunito);
   }
 }
 
@@ -70,12 +75,84 @@
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
 }
 
 .rounded-4xl {
   border-radius: 2rem;
+}
+
+.gradient-teachers {
+  background: linear-gradient(
+    135deg,
+    hsl(262 83% 68% / 0.15),
+    hsl(262 83% 68% / 0.05)
+  );
+}
+.gradient-parents {
+  background: linear-gradient(
+    135deg,
+    hsl(195 85% 60% / 0.15),
+    hsl(195 85% 60% / 0.05)
+  );
+}
+.gradient-students {
+  background: linear-gradient(
+    135deg,
+    hsl(340 80% 65% / 0.15),
+    hsl(340 80% 65% / 0.05)
+  );
+}
+
+.card-hover {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px hsl(var(--primary) / 0.2);
 }
 
 /* Hide Spline "Built with Spline" badge */
