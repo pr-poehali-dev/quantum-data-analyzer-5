@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import SplineScene from "@/components/SplineScene"
 import Header from "@/components/Header"
 import RotatingTextAccent from "@/components/RotatingTextAccent"
@@ -18,7 +19,7 @@ const audienceData = [
       "Научно обоснованные методики для создания эмоционально безопасной среды. Помогаем выстроить доверие, снизить конфликтность и повысить вовлечённость учеников.",
     skills: ["Управление классом через ЭИ", "Работа с тревожными детьми", "Эмпатийное общение", "Профилактика выгорания"],
     cta: "Программа для педагогов",
-    href: "#teachers-detail",
+    href: "/teachers",
   },
   {
     id: "parents",
@@ -310,16 +311,29 @@ const Index = () => {
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-6 max-w-lg">{aud.description}</p>
-                  <a href="#contact">
-                    <button
-                      className="px-6 py-3 rounded-full font-bold text-sm text-white transition-all duration-300 hover:scale-105"
-                      style={{
-                        background: `hsl(${aud.color === "var(--color-teachers)" ? "262 83% 68%" : aud.color === "var(--color-parents)" ? "195 85% 60%" : "340 80% 65%"})`,
-                      }}
-                    >
-                      {aud.cta} →
-                    </button>
-                  </a>
+                  {aud.href.startsWith("/") ? (
+                    <Link to={aud.href}>
+                      <button
+                        className="px-6 py-3 rounded-full font-bold text-sm text-white transition-all duration-300 hover:scale-105"
+                        style={{
+                          background: `hsl(${aud.color === "var(--color-teachers)" ? "262 83% 68%" : aud.color === "var(--color-parents)" ? "195 85% 60%" : "340 80% 65%"})`,
+                        }}
+                      >
+                        {aud.cta} →
+                      </button>
+                    </Link>
+                  ) : (
+                    <a href="#contact">
+                      <button
+                        className="px-6 py-3 rounded-full font-bold text-sm text-white transition-all duration-300 hover:scale-105"
+                        style={{
+                          background: `hsl(${aud.color === "var(--color-teachers)" ? "262 83% 68%" : aud.color === "var(--color-parents)" ? "195 85% 60%" : "340 80% 65%"})`,
+                        }}
+                      >
+                        {aud.cta} →
+                      </button>
+                    </a>
+                  )}
                 </div>
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {aud.skills.map((skill) => (
