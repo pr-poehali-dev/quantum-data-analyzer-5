@@ -57,17 +57,17 @@ const Index = () => {
 
             <div className="flex flex-col gap-2 max-w-5xl">
               <div className="flex items-center gap-4">
-                <span className="text-accent font-mono text-sm">Имя</span>
-                <span className="text-foreground font-mono text-sm">Макс</span>
+                <span className="text-accent font-mono text-sm">Для кого</span>
+                <span className="text-foreground font-mono text-sm">Подростки 12–18 лет и их родители</span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="text-accent font-mono text-sm">Вид</span>
-                <span className="text-foreground font-mono text-sm">Инопланетянин с планеты Флэпджек</span>
+                <span className="text-accent font-mono text-sm">Проблема</span>
+                <span className="text-foreground font-mono text-sm">Игровая зависимость, уход от реальности, социальная изоляция</span>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-accent font-mono text-sm">Характер</span>
+                <span className="text-accent font-mono text-sm">Подход</span>
                 <span className="text-foreground font-mono text-sm">
-                  Любопытный, гибкий, немного расслабленный - но острый, когда дело касается баз данных и организации информации.
+                  Работаем без осуждения — через диалог, психологическую поддержку и постепенное восстановление интереса к жизни.
                 </span>
               </div>
             </div>
